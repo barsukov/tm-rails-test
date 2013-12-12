@@ -27,7 +27,7 @@ group :test do
 
 end
 gem 'jquery-rails', '~> 2.3.0'
-
+gem 'therubyracer', '~> 0.9.9'
 gem 'activeadmin'
 gem 'meta_search', '>= 1.1.0.pre'
 gem 'cancan'
