@@ -19,15 +19,18 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+gem 'paper_trail'
 group :test do
+  gem 'rspec-rails'
   gem 'cucumber'
+  gem 'cucumber-rails', :require => false
+  gem "factory_girl_rails", "~> 3.0"
   gem 'database_cleaner'
-  gem 'cucumber-rails'
-  gem 'factory_girl_rails'
-
+  gem 'capybara'
 end
+
 gem 'jquery-rails', '~> 2.3.0'
-gem 'therubyracer', '~> 0.9.9'
+gem 'therubyracer' 
 gem 'activeadmin'
 gem 'meta_search', '>= 1.1.0.pre'
 gem 'cancan'

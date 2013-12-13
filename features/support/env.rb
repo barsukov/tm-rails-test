@@ -6,7 +6,7 @@
 
 require 'cucumber/rails'
 require "factory_girl/step_definitions"
-
+require "rspec/matchers"
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
 # selectors in your step definitions to use the XPath syntax.
@@ -49,7 +49,16 @@ end
 #   Before('~@no-txn', '~@selenium', '~@culerity', '~@celerity', '~@javascript') do
 #     DatabaseCleaner.strategy = :transaction
 #   end
-#
+World(FactoryGirl::Syntax::Methods)
+Before('@admin_features') do
+  @admin = create :admin_user
+  visit('/admin/logout')
+  visit('/admin/login')
+
+  fill_in 'admin_user_email', :with => @admin.email
+  fill_in 'admin_user_password', :with => @admin.password
+  click_button "Login"
+end
 
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
