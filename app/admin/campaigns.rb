@@ -3,12 +3,19 @@ ActiveAdmin.register Campaign do
   index do
     column :name
     column :budget
-    column :platform
+    column :platforms do |campaign|
+        campaign.platforms.map { |p| p.name }.join(' ')
+    end
     actions
   end
 
-  collection_action :history do
-    @campaigns = Campaign.require_budget
-    render "layouts/history"
+
+  form do |f|
+    f.inputs "Campaign" do
+      f.input :name
+      f.input :budget
+      f.input :platforms, as: :check_boxes, collection: Platform.all, required: true
+    f.actions
+    end
   end
 end

@@ -1,5 +1,6 @@
 class Platform < ActiveRecord::Base
-  has_and_belongs_to_many :campaigns
+  has_many :campaign_platforms
+  has_many :campaigns, :through => :campaign_platforms
   attr_accessible :name
   validates :name, presence: true
 end
