@@ -2,10 +2,11 @@
 
 ### Getting started
 I have implemented every parts of requirements,
-I wrote the cucumber scenarioes for test cases and cover some points.
-I used paper_trail gem for saved history and auditing your models
-For test cases I have used cucumber+factory_girl
-For Auth task I have used a cancan.
+I wrote the cucumber scenarioes for test cases and cover some points:
+
+1. `I used paper_trail gem for saved history and auditing your models`
+2. `For test cases I have used cucumber+factory_girl`
+3. `For Auth task I have used a cancan.`
 
 For audit task you need to go to dashboard page.
 
