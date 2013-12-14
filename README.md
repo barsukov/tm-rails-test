@@ -3,6 +3,11 @@
 ### Getting started
 I have implemented every parts of requirements,
 I wrote the cucumber scenarioes for test cases and cover some points.
+I used paper_trail gem for saved history and auditing your models
+For test cases I have used cucumber+factory_girl
+For Auth task I have used a cancan.
+
+For audit task you need to go to dashboard page.
 
 ### Part 1: Platforms for campaigns
 Our campaigns are run on different (mobile) platforms such as Android and iOS. Our campaign managers want to set one or more platforms for each campaign in the application from a list of available platforms (for now, `Android` and `iOS`). Each campaign must have at least one platform. We want to be able to add more supported platforms in the future.
